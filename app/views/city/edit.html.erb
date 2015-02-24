@@ -1,0 +1,17 @@
+<h1>City#edit</h1>
+
+<%= form_for :city, url: city_path, method: :patch do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :short_name %><br>
+    <%= f.text_field :short_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

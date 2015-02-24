@@ -1,0 +1,15 @@
+<%= form_for :city, url: city_index_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :short_name %><br>
+    <%= f.text_field :short_name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

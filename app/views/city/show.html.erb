@@ -1,0 +1,9 @@
+<h3>City</h3>
+<p>Name: <%= @city.name if @city.name %></p>
+<p>Short name: <%= @city.short_name if @city.short_name %></p>
+
+<p><%= link_to 'Destroy', city_path(@city),
+			  id: 'delete',
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></p>
+
