@@ -1,4 +1,5 @@
 include Warden::Test::Helpers
+include ActionDispatch::Assertions::ResponseAssertions  
 Warden.test_mode!
 
 # Feature: User index page
@@ -22,4 +23,13 @@ feature 'User index page', :devise do
     expect(page).to have_content user.email
   end
 
+  scenario 'user is on all_users page' do
+    user = FactoryGirl.create(:user)
+    login_as(user, scope: :user)
+    visit users_path
+    #assert_redirected_to '/all_users' 
+    expect(page.current_path).to eq("/all_users")
+  end
+
 end
+
