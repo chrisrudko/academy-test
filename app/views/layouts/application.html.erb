@@ -4,17 +4,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Rails Devise" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise" %>">
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<!--     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ -->    
+
+  <%= javascript_include_tag 'application' %>
+
+    
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
+
+    <header id="ui" data-user="<%=current_user.name if current_user%>">
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+<!--     <a href="#" id="alert" data-message="asdfasf">asdf</a> -->
   </body>
 </html>
