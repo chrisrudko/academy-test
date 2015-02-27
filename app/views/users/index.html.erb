@@ -4,11 +4,15 @@
     <div class="column">
       <table class="table">
         <tbody>
+
           <% @users.each do |user| %>
             <tr>
               <%= render user %>
             </tr>
           <% end %>
+          <tr>
+            <td> <%=will_paginate @users %> </td>
+          </tr>
         </tbody>
       </table>
     </div>
